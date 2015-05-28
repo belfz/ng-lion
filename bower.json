@@ -1,0 +1,22 @@
+{
+  "name": "ng-lion-boilerplate",
+  "version": "1.0.0",
+  "authors": [
+    "Marcin Baraniecki <marcin.baraniecki@mttnow.com>"
+  ],
+  "description": "ng-lion-boilerplate",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skeleton-css": "~2.0.4"
+  }
+}

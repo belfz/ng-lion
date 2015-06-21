@@ -1,12 +1,14 @@
 module.exports = function (gulp) {
+	require('./gulp-hint')(gulp);
 	var browserify = require('browserify');
 	var source = require('vinyl-source-stream');
 	var buffer = require('vinyl-buffer');
 	var uglify = require('gulp-uglify');
 	var sourcemaps = require('gulp-sourcemaps');
 	var gutil = require('gulp-util');
+	var ngAnnotate = require('gulp-ng-annotate');
 
-	gulp.task(':browserify', [':clean-js'], function() {
+	gulp.task(':browserify', [':clean-js', ':hint'], function() {
 		var b = browserify({
 		    entries: 'src/js/main.js',
 		    debug: true
@@ -14,6 +16,7 @@ module.exports = function (gulp) {
 
     	return b.bundle()
 		    .pipe(source('bundled.js'))
+		    .pipe(ngAnnotate())
 		    .pipe(buffer())
 		    .pipe(sourcemaps.init({loadMaps: true}))
 		        // Add transformation tasks to the pipeline here.

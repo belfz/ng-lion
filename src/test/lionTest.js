@@ -17,6 +17,6 @@ describe('angular test', function () {
 		controller('AppController as appCtrl', {
         	$scope: scope
       	});
-      	expect(scope.appCtrl.msg).toEqual('Browserified!');
+      	expect(scope.appCtrl.msg).toEqual('Hello from ng-lion!');
 	});
 });

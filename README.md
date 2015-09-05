@@ -2,7 +2,8 @@
 
 An
 
-- Angular
+- Angular 1.4
+- UI-router
 - Karma
 - Gulp
 - Browserify

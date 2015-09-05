@@ -1,6 +1,7 @@
 module.exports = function (gulp) {
 	require('./gulp-hint')(gulp);
 	var browserify = require('browserify');
+	var babelify = require('babelify');
 	var source = require('vinyl-source-stream');
 	var buffer = require('vinyl-buffer');
 	var uglify = require('gulp-uglify');
@@ -12,7 +13,8 @@ module.exports = function (gulp) {
 		var b = browserify({
 		    entries: 'src/js/main.js',
 		    debug: true
-  		});
+  		})
+  		.transform(babelify);
 
     	return b.bundle()
 		    .pipe(source('bundled.js'))
